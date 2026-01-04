@@ -123,6 +123,21 @@
             transform: translateX(4px);
         }
 
+        .video-crop-container {
+            max-width: 80%;
+            height: 600px; /* Explicitly set height for vertical cropping in normal view */
+            overflow: hidden;
+            margin: 20px auto 0 auto;
+            border-radius: 8px;
+        }
+
+        .video-crop-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top; /* Crops from the bottom */
+        }
+
         /* Main content */
         main {
             padding: 4rem 0;
@@ -440,14 +455,30 @@
                 <div class="about-content">
                     <div>
                         <img src="./images/self.jpg" alt="Alex Jafari" style="max-width: 100%; aspect-ratio: 1/1; object-fit: cover; object-position: center 0%; display: block; margin: 0 auto 20px auto; border-radius: 50%;">
-                        <div class="highlight-box">
-                            <p>Recently returned from several months of intensive martial arts training at traditional kung fu temples in Shandong, China — a transformative experience that has deepened my approach to both discipline and problem-solving.</p>
-                        </div>
                     </div>
                     <div>
                         <p>I'm a Staff Software Engineer with expertise spanning mobile development, technical consulting, and computer science education. Currently, I work at Keystone Strategy as a technical expert witness, where I translate complex technical problems into clear evidence for legal proceedings.</p>
                         <p>My technical journey has taken me from Google to Twitter (now X), where I led the Android implementation of Twitter Subscriptions and managed multi-country launches of greenfield projects.</p>
                         <p>Beyond code, I'm passionate about education. I authored "AP Computer Science Done Right," an introductory programming textbook featured in Duke University's CS curriculum and taught at Commonwealth High School in Boston.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">Latest Endeavor</h2>
+                <div class="about-content">
+                    <div>
+                        <div class="video-crop-container">
+                            <video controls autoplay loop muted playsinline>
+                                <source src="./images/kungfu.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="highlight-box">
+                            <p>Recently returned from several months of intensive martial arts training at traditional kung fu temples in Shandong, China — a transformative experience that has deepened my approach to both discipline and problem-solving.</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -582,4 +613,42 @@
         </footer>
     </div>
 </body>
+    <script>
+        const videoElement = document.querySelector('.video-crop-container video');
+        if (videoElement) {
+            const initialObjectFit = videoElement.style.objectFit; // Store initial object-fit
+
+            videoElement.addEventListener('fullscreenchange', () => {
+                if (document.fullscreenElement) {
+                    // Entered fullscreen, show entire video with letterboxing
+                    videoElement.style.objectFit = 'contain';
+                } else {
+                    // Exited fullscreen, revert to original object-fit for cropping
+                    videoElement.style.objectFit = initialObjectFit || 'cover';
+                }
+            });
+            // For older browsers, also listen for prefixed events
+            videoElement.addEventListener('webkitfullscreenchange', () => {
+                if (document.webkitFullscreenElement) {
+                    videoElement.style.objectFit = 'contain';
+                } else {
+                    videoElement.style.objectFit = initialObjectFit || 'cover';
+                }
+            });
+            videoElement.addEventListener('mozfullscreenchange', () => {
+                if (document.mozFullScreenElement) {
+                    videoElement.style.objectFit = 'contain';
+                } else {
+                    videoElement.style.objectFit = initialObjectFit || 'cover';
+                }
+            });
+            videoElement.addEventListener('msfullscreenchange', () => {
+                if (document.msFullscreenElement) {
+                    videoElement.style.objectFit = 'contain';
+                } else {
+                    videoElement.style.objectFit = initialObjectFit || 'cover';
+                }
+            });
+        }
+    </script>
 </html>
