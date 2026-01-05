@@ -123,6 +123,19 @@
             transform: translateX(4px);
         }
 
+        .subtitle a {
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .subtitle a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
         .video-crop-container {
             max-width: 80%;
             height: 600px; /* Explicitly set height for vertical cropping in normal view */
@@ -436,7 +449,7 @@
             <div class="header-content">
                 <div class="name-section">
                     <h1>Alex Jafari</h1>
-                    <p class="subtitle">Software Engineer · Author · Educator</p>
+                    <p class="subtitle"><a href="#experience">Software Engineer</a> · <a href="#featured-work">Author</a> · <a href="#teaching">Educator</a></p>
                     <p class="tagline">Building elegant technical solutions and teaching the next generation of programmers</p>
                 </div>
                 <div class="contact-links">
@@ -464,7 +477,7 @@
                 </div>
             </section>
 
-            <section>
+            <section id="latest-endeavor">
                 <h2 class="section-title">Latest Endeavor</h2>
                 <div class="about-content">
                     <div>
@@ -483,7 +496,7 @@
                 </div>
             </section>
 
-            <section>
+            <section id="featured-work">
                 <h2 class="section-title">Featured Work</h2>
                 <div class="featured-project">
                     <img src="https://m.media-amazon.com/images/I/61u-X4iyfHL._SL1500_.jpg" alt="AP Computer Science Done Right Book Cover" style="width: 150px; float: right; margin-left: 20px;">
@@ -493,67 +506,73 @@
                 </div>
             </section>
 
-            <section>
+            <section id="experience">
                 <h2 class="section-title">Experience</h2>
                 <div class="experience-grid">
-                    <div class="experience-card">
-                        <div class="experience-header">
-                            <div class="experience-title">
-                                <h3>Staff Software Engineer</h3>
-                                <p class="company">Keystone Strategy</p>
+                    <div class="experience-category">
+                        <h3>Software Engineering</h3>
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div class="experience-title">
+                                    <h3>Staff Software Engineer</h3>
+                                    <p class="company">Keystone Strategy</p>
+                                </div>
+                                <span class="date">Nov 2022 - May 2025</span>
                             </div>
-                            <span class="date">Nov 2022 - May 2025</span>
+                            <ul>
+                                <li>Managed project workflows and team task allocation, ensuring timely delivery of technical analyses and expert reports</li>
+                                <li>Authored expert technical reports for legal proceedings, translating complex technical matters into clear analyses for judges, juries, and legal counsel</li>
+                                <li>Analyzed ambiguous technical legal problems and translated them into concrete evidence, technical findings, and case arguments</li>
+                                <li>Provided mentorship and technical guidance to junior consultants on code review, technical analysis, and engineering best practices</li>
+                            </ul>
                         </div>
-                        <ul>
-                            <li>Managed project workflows and team task allocation, ensuring timely delivery of technical analyses and expert reports</li>
-                            <li>Authored expert technical reports for legal proceedings, translating complex technical matters into clear analyses for judges, juries, and legal counsel</li>
-                            <li>Analyzed ambiguous technical legal problems and translated them into concrete evidence, technical findings, and case arguments</li>
-                            <li>Provided mentorship and technical guidance to junior consultants on code review, technical analysis, and engineering best practices</li>
-                        </ul>
+
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div class="experience-title">
+                                    <h3>Android Engineer II</h3>
+                                    <p class="company">X (formerly Twitter)</p>
+                                </div>
+                                <span class="date">Oct 2019 - July 2021</span>
+                            </div>
+                            <ul>
+                                <li>Defined and implemented Twitter Subscription with legal and product teams</li>
+                                <li>Designed and led technical roadmaps for successful multi-country launch of a greenfield project</li>
+                                <li>Resolved complex scaling issues during product expansion</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div class="experience-title">
+                                    <h3>Web Developer Intern</h3>
+                                    <p class="company">Google</p>
+                                </div>
+                                <span class="date">May 2018 - Sep 2018</span>
+                            </div>
+                            <ul>
+                                <li>Implemented a new feature for AdWords Scripts, impacting 20% of users</li>
+                                <li>Added support for programmatic management of Drafts & Experiments</li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="experience-card">
-                        <div class="experience-header">
-                            <div class="experience-title">
-                                <h3>Android Engineer II</h3>
-                                <p class="company">X (formerly Twitter)</p>
+                    <div class="experience-category" id="teaching">
+                        <h3>Teaching</h3>
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div class="experience-title">
+                                    <h3>Computer Science Teacher</h3>
+                                    <p class="company">Commonwealth High School</p>
+                                </div>
+                                <span class="date">Jan 2019 - June 2019</span>
                             </div>
-                            <span class="date">Oct 2019 - July 2021</span>
+                            <ul>
+                                <li>Taught functional programming, computer systems, algorithms, and advanced topics</li>
+                                <li>Developed curriculum materials and hands-on coding exercises</li>
+                                <li>Mentored students in programming fundamentals and problem-solving</li>
+                            </ul>
                         </div>
-                        <ul>
-                            <li>Defined and implemented Twitter Subscription with legal and product teams</li>
-                            <li>Designed and led technical roadmaps for successful multi-country launch of a greenfield project</li>
-                            <li>Resolved complex scaling issues during product expansion</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-card">
-                        <div class="experience-header">
-                            <div class="experience-title">
-                                <h3>Computer Science Teacher</h3>
-                                <p class="company">Commonwealth High School</p>
-                            </div>
-                            <span class="date">Jan 2019 - June 2019</span>
-                        </div>
-                        <ul>
-                            <li>Taught functional programming, computer systems, algorithms, and advanced topics</li>
-                            <li>Developed curriculum materials and hands-on coding exercises</li>
-                            <li>Mentored students in programming fundamentals and problem-solving</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-card">
-                        <div class="experience-header">
-                            <div class="experience-title">
-                                <h3>Web Developer Intern</h3>
-                                <p class="company">Google</p>
-                            </div>
-                            <span class="date">May 2018 - Sep 2018</span>
-                        </div>
-                        <ul>
-                            <li>Implemented a new feature for AdWords Scripts, impacting 20% of users</li>
-                            <li>Added support for programmatic management of Drafts & Experiments</li>
-                        </ul>
                     </div>
                 </div>
             </section>
