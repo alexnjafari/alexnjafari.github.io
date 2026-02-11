@@ -166,6 +166,9 @@
         section:nth-child(2) { animation-delay: 0.2s; }
         section:nth-child(3) { animation-delay: 0.3s; }
         section:nth-child(4) { animation-delay: 0.4s; }
+        section:nth-child(5) { animation-delay: 0.5s; }
+        section:nth-child(6) { animation-delay: 0.6s; }
+        section:nth-child(7) { animation-delay: 0.7s; }
 
         .section-title {
             font-family: 'DM Mono', monospace;
@@ -391,6 +394,106 @@
             color: var(--accent);
         }
 
+        /* Projects section */
+        .projects-grid {
+            display: grid;
+            gap: 2.5rem;
+            grid-template-columns: 1fr;
+        }
+
+        .project-card {
+            border: 1px solid var(--border);
+            padding: 0;
+            background: white;
+            position: relative;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            display: flex;
+            align-items: stretch;
+            flex-wrap: wrap;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--accent);
+            transition: height 0.3s ease;
+            z-index: 1;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .project-card:hover::before {
+            height: 100%;
+        }
+
+        .project-card-body {
+            flex: 1;
+            min-width: 280px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .project-screenshots {
+            flex: 0 0 auto;
+            width: 280px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            background: var(--paper);
+        }
+
+        .project-screenshots img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        .project-screenshots.single {
+            max-width: 280px;
+        }
+
+        .project-card h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            color: var(--subtle);
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+        }
+
+        .project-link {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-link:hover {
+            border-color: var(--accent);
+            transform: translateX(4px);
+        }
+
         /* Footer */
         footer {
             border-top: 1px solid var(--border);
@@ -440,6 +543,15 @@
             .skills-grid {
                 grid-template-columns: 1fr;
             }
+
+            .project-card {
+                flex-direction: column;
+            }
+
+            .project-screenshots {
+                width: 100%;
+                max-width: none;
+            }
         }
     </style>
 </head>
@@ -449,7 +561,7 @@
             <div class="header-content">
                 <div class="name-section">
                     <h1>Alex Jafari</h1>
-                    <p class="subtitle"><a href="#experience">Software Engineer</a> · <a href="#featured-work">Author</a> · <a href="#teaching">Educator</a></p>
+                    <p class="subtitle"><a href="#experience">Software Engineer</a> · <a href="#featured-work">Author</a> · <a href="#projects">Projects</a> · <a href="#teaching">Educator</a></p>
                     <p class="tagline">Building elegant technical solutions and teaching the next generation of programmers</p>
                 </div>
                 <div class="contact-links">
@@ -503,6 +615,25 @@
                     <h3>AP Computer Science Done Right</h3>
                     <p>An introductory programming textbook focusing on Java fundamentals, object-oriented design, and algorithmic thinking. Featured in Duke University's Computer Science syllabus and adopted by prestigious high schools nationwide.</p>
                     <a href="https://www.amazon.com/AP-Computer-Science-Done-Right/dp/B09TY9ZYMV/ref=sr_1_1?crid=2CBS6VLNI6NR&dib=eyJ2IjoiMSJ9.Ojhj2voD9SN7FwUd04OOxx-Yw3WtW2oXva7uixJOnBsr-S-_Ba6yWf_rbzahYZQm-2LByaAhq07coshZmb6wbw.ZE65FTadGblLKPICXy1OS7oJWhtple2A4BUAhFay1s&dib_tag=se&keywords=ap+computer+science+done+right&qid=1767503664&sprefix=ap+computer+science+done+righ%2Caps%2C158&sr=8-1" class="featured-link" target="_blank">Learn More →</a>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-screenshots single">
+                            <img src="./images/seoulMap.jpg" alt="City Explorer — explored paths in Seoul">
+                        </div>
+                        <div class="project-card-body">
+                            <h3>City Explorer</h3>
+                            <p>An app that tracks the user's explored paths. The UI shows the explored paths, while it also calculates the percent of explored paths relative to the total metropolitan city's roads.</p>
+                            <a href="https://github.com/alexnjafari/cityExplorer" class="project-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                        <div class="project-screenshots single">
+                            <img src="./images/stats.png" alt="City Explorer — exploration stats">
+                        </div>
+                    </div>
                 </div>
             </section>
 
