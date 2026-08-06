@@ -394,6 +394,78 @@
             color: var(--accent);
         }
 
+        /* Coach section */
+        .coach-block {
+            background:
+                radial-gradient(ellipse 80% 60% at 0% 0%, rgba(58, 123, 199, 0.14), transparent 55%),
+                radial-gradient(ellipse 70% 50% at 100% 100%, rgba(58, 123, 199, 0.08), transparent 50%),
+                linear-gradient(180deg, #e8f0f7 0%, #f4f7fa 100%);
+            padding: 2.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .coach-label {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.65rem;
+        }
+
+        .coach-block > h3 {
+            font-size: clamp(1.5rem, 3vw, 1.9rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin-bottom: 0.65rem;
+        }
+
+        .coach-lede {
+            font-size: 1.1rem;
+            color: var(--subtle);
+            max-width: 44ch;
+            margin-bottom: 1.5rem;
+        }
+
+        .coach-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem 1rem;
+        }
+
+        .coach-cta {
+            display: inline-flex;
+            align-items: center;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.9rem;
+            text-decoration: none;
+            padding: 0.8rem 1.3rem;
+            transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+        }
+
+        .coach-cta--solid {
+            color: white;
+            background: var(--accent);
+        }
+
+        .coach-cta--solid:hover {
+            background: var(--ink);
+            transform: translateY(-2px);
+        }
+
+        .coach-cta--ghost {
+            color: var(--ink);
+            background: transparent;
+            border: 1px solid var(--border);
+        }
+
+        .coach-cta--ghost:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
         /* Projects section */
         .projects-grid {
             display: grid;
@@ -552,6 +624,10 @@
                 width: 100%;
                 max-width: none;
             }
+
+            .coach-block {
+                padding: 1.75rem;
+            }
         }
     </style>
 </head>
@@ -561,7 +637,7 @@
             <div class="header-content">
                 <div class="name-section">
                     <h1>Alex Jafari</h1>
-                    <p class="subtitle"><a href="#experience">Software Engineer</a> · <a href="#featured-work">Author</a> · <a href="#projects">Projects</a> · <a href="#teaching">Educator</a></p>
+                    <p class="subtitle"><a href="#coach">Coach</a> · <a href="#featured-work">Author</a> · <a href="#projects">Projects</a> · <a href="#experience">Software Engineer</a> · <a href="#teaching">Educator</a></p>
                     <p class="tagline">Building elegant technical solutions and teaching the next generation of programmers</p>
                 </div>
                 <div class="contact-links">
@@ -604,6 +680,19 @@
                         <div class="highlight-box">
                             <p>Recently returned from several months of intensive martial arts training at traditional kung fu temples in Shandong, China — a transformative experience that has deepened my approach to both discipline and problem-solving.</p>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="coach">
+                <h2 class="section-title">Coach</h2>
+                <div class="coach-block">
+                    <p class="coach-label">Alex Jafari Coaching</p>
+                    <h3>Not more advice. A real next step.</h3>
+                    <p class="coach-lede">Forward-focused coaching that ends every session with one concrete action.</p>
+                    <div class="coach-actions">
+                        <a href="https://alexjafaricoaching.github.io" class="coach-cta coach-cta--ghost" target="_blank" rel="noopener">Visit the website</a>
+                        <a href="https://calendly.com/alexjafaricoaching/coaching" class="coach-cta coach-cta--solid" target="_blank" rel="noopener">Book a free session</a>
                     </div>
                 </div>
             </section>
